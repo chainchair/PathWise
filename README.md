@@ -11,7 +11,7 @@ PathWise es un proyecto en Python que proporciona funcionalidades para evaluaci�
 - [Requisitos](#requisitos)  
 - [Instalación rápida](#instalación-rápida)  
 - [creacion del archivo de entorno](#creacion-del-archivo-de-entorno)  
-- [Api key](#api-key)  
+- [API key](#api-key)  
 - [ejecucion](#ejecucion)  
 
 
@@ -67,7 +67,7 @@ defina un archivo .env con lo siguiente en la raiz de su proyecto
 OPENAI_API_KEY=sk-proj-apikey
 DEBUG=True
 
-##Api key 
+## API key 
 para crear la api key entre a este enlace
 https://platform.openai.com/api-keys
 
