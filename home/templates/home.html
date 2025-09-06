@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   {% block title %} Pathwise {% endblock %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    
+</head>
+{% block content %}
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <!-- Navbar -->
+    <header>
+        <a href= "{% url 'landing'%} "class="btn"><h2>Pathwise</h2></a>
+        <nav>
+            
+            <a href= "{% url 'login'%}">Login</a>
+            <a href= "{% url 'register'%} ">Sign in</a>
+            <a href= "{% url 'my_roadmap'%} ">Roadmap</a>
+            <a href= "{% url 'logout'%} ">Logout</a>
+
+        </nav>
+    </header>
+
+<!-- Hero -->
+<section class="hero bg-gradient-to-r from-blue-500 to-blue-700 text-white text-center py-12">
+  <h1 class="text-4xl font-bold mb-4">Tu camino empieza aquí </h1>
+  <p class="text-lg mb-6">Descubre una plataforma diseñada para encontrar el trabajo de tus sueños a partir de un roadmap personalizado impulsado por inteligencia artificial.</p>
+  <button href="{%url 'login'%}" class="bg-gray-800 text-white px-6 py-2 rounded-lg shadow-md hover:bg-gray-900">Comenzar ahora</button>
+</section>
+<!-- Pilares -->
+<section class="features">
+  <h2>Nuestros pilares</h2>
+  <div class="features-grid">
+    <div class="feature">
+      <h3>📝 Completa tu perfil</h3>
+      <p>Cuéntanos sobre ti, tus habilidades e intereses. Entre más completo tu perfil, más precisa será la experiencia que recibirás.</p>
+    </div>
+    <div class="feature">
+      <h3>🧭 Roadmap inteligente</h3>
+      <p>Obtén un plan de acción personalizado con pasos claros, cursos y recursos que te guiarán hacia tu objetivo profesional.</p>
+    </div>
+    <div class="feature">
+      <h3>💼 Empleos sugeridos</h3>
+      <p>Accede a oportunidades laborales adaptadas a tu perfil y metas, para que encuentres el trabajo ideal más rápido.</p>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- Cómo funciona -->
+    <section class="how-it-works">
+        <h2>Cómo funciona</h2>
+        <div class="steps">
+            <div class="step">
+                <h3>1️⃣ Regístrate</h3>
+                <p>Crea tu cuenta en pocos pasos para comenzar tu camino.</p>
+            </div>
+            <div class="step">
+                <h3>2️⃣ Explora</h3>
+                <p>Accede a cursos, herramientas y comunidades que se adaptan a ti.</p>
+            </div>
+            <div class="step">
+                <h3>3️⃣ Avanza</h3>
+                <p>Sigue tu progreso y alcanza tus objetivos con apoyo constante.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Pathwise - Todos los derechos reservados</p>
+    </footer>
+
+</body>
+{% endblock %}
+</html>

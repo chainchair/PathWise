@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %} Survey Form {% endblock %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+    <div class="card shadow-lg p-4" style="max-width: 600px; width: 100%; background-color: #f3f8fa;">
+        <h2 class="text-center mb-4">Completa tu encuesta</h2>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <!-- Renderizado de campos con estilos de Bootstrap -->
+            {% for field in form %}
+                <div class="mb-3">
+                    <label for="{{ field.id_for_label }}" class="form-label">
+                        {{ field.label }}
+                    </label>
+                    {{ field }}
+                    {% if field.errors %}
+                        <div class="text-danger small">{{ field.errors|striptags }}</div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+            <button type="submit" class="btn btn-dark w-100">Enviar encuesta</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

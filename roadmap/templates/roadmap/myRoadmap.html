@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Mi Roadmap{% endblock %}
+
+
+{% block content %}
+    <h2>Mi Roadmap</h2>
+    {% if roadmap %}
+        <p>{{ roadmap.content |linebreaks  }}</p>
+    {% else %}
+        <p>No tienes roadmap aún.</p>
+    {% endif %}
+
+{% endblock %}
