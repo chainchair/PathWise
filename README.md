@@ -44,7 +44,7 @@ PathWise es un proyecto en Python que proporciona funcionalidades para evaluaci�
 
 ---
 
-## Instalación rápida (local)
+## Instalación rápida
 ```bash
 # clonar repo
 git clone https://github.com/chainchair/PathWise.git
@@ -61,12 +61,12 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## creacion-del-archivo-de-entorno
+## creacion del archivo de entorno
 defina un archivo .env con lo siguiente en la raiz de su proyecto
 OPENAI_API_KEY=sk-proj-apikey
 DEBUG=True
 
-###API-key 
+###API key 
 para crear la api key entre a este enlace
 https://platform.openai.com/api-keys
 
