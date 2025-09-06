@@ -6,7 +6,8 @@ PathWise es un proyecto en Python que proporciona funcionalidades para evaluaci�
 ---
 
 ## Tabla de contenidos
-- [Características](#características)  
+- [landing page](#landing-page)  
+- [Características](#características)
 - [Tecnologías](#tecnologías)  
 - [Requisitos](#requisitos)  
 - [Instalación rápida](#instalación-rápida)  
@@ -14,7 +15,8 @@ PathWise es un proyecto en Python que proporciona funcionalidades para evaluaci�
 - [API key](#api-key)  
 - [ejecucion](#ejecucion)  
 
-
+---
+## landing page
 ![WhatsApp Image 2025-09-06 at 2 12 12 AM](https://github.com/user-attachments/assets/32637469-5fe1-457c-9c97-5f6b795675a1)
 
 ---
