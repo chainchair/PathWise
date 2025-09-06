@@ -11,8 +11,9 @@ PathWise es un proyecto en Python que proporciona funcionalidades para evaluaci�
 - [Requisitos](#requisitos)  
 - [Instalación rápida](#instalación-rápida)  
 - [Configuración](#creacion-del-archivo-de-entorno)  
-- [Cómo ejecutar](#ejecucion)  
-- [API KEY](#API-key)  
+- [API key](#api-key)  
+- [ejecucion](#ejecucion)  
+
 
 
 ---
