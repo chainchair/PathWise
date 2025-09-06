@@ -67,7 +67,7 @@ defina un archivo .env con lo siguiente en la raiz de su proyecto
 OPENAI_API_KEY=sk-proj-apikey
 DEBUG=True
 
-###API key 
+##API key 
 para crear la api key entre a este enlace
 https://platform.openai.com/api-keys
 
