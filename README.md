@@ -79,7 +79,7 @@ https://platform.openai.com/api-keys
 ```bash
 python manage.py migrate
 ```
-### ajecutar servidor
+### ejecutar servidor
 ```bash
 python manage.py runserver
 ```
