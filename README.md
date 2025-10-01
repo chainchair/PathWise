@@ -57,7 +57,7 @@ cd PathWise
 # crear entorno virtual
 python -m venv venv
 # Windows
-# venv\Scripts\activate
+venv\Scripts\activate
 # Unix / macOS
 source venv/bin/activate
 
