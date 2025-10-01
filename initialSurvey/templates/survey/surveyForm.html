@@ -1,11 +1,34 @@
 {% extends "base.html" %}
 
-{% block title %} Survey Form {% endblock %}
+{% block title %} Survey Form <script>
+(function(){
+  function progress(){
+    const fields = Array.from(document.querySelectorAll("form input, form textarea, form select"))
+      .filter(el => el.name && !["csrfmiddlewaretoken"].includes(el.name));
+    const required = fields.filter(el => el.hasAttribute("required"));
+    const filled = required.filter(el => (el.type==="checkbox"||el.type==="radio") ? el.checked : String(el.value||"").trim().length>0).length;
+    const total = required.length || 1;
+    const pct = Math.round((filled/total)*100);
+    const bar = document.getElementById("surveyProgress");
+    const hint = document.getElementById("progressHint");
+    if(bar) bar.value = pct; if(hint) hint.textContent = pct + "% completo";
+  }
+  document.addEventListener("input", progress, true);
+  document.addEventListener("change", progress, true);
+  progress();
+})();
+</script>
+{% endblock %}
 
 {% block content %}
 <div class="container d-flex justify-content-center align-items-center" style="min-height: 90vh;">
     <div class="card shadow-lg p-4" style="max-width: 600px; width: 100%; background-color: #f3f8fa;">
-        <h2 class="text-center mb-4">Completa tu encuesta</h2>
+        <h2 class="text-center mb-2">Completa tu encuesta</h2>
+<p class="text-muted text-center mb-4">Entre más preciso seas, mejores serán tus recomendaciones y roadmap.</p>
+<div class="mb-3">
+  <progress id="surveyProgress" value="0" max="100" style="width:100%"></progress>
+  <small id="progressHint" class="text-muted">0% completo</small>
+</div>
 
         <form method="post">
             {% csrf_token %}
@@ -27,4 +50,22 @@
         </form>
     </div>
 </div>
+<script>
+(function(){
+  function progress(){
+    const fields = Array.from(document.querySelectorAll("form input, form textarea, form select"))
+      .filter(el => el.name && !["csrfmiddlewaretoken"].includes(el.name));
+    const required = fields.filter(el => el.hasAttribute("required"));
+    const filled = required.filter(el => (el.type==="checkbox"||el.type==="radio") ? el.checked : String(el.value||"").trim().length>0).length;
+    const total = required.length || 1;
+    const pct = Math.round((filled/total)*100);
+    const bar = document.getElementById("surveyProgress");
+    const hint = document.getElementById("progressHint");
+    if(bar) bar.value = pct; if(hint) hint.textContent = pct + "% completo";
+  }
+  document.addEventListener("input", progress, true);
+  document.addEventListener("change", progress, true);
+  progress();
+})();
+</script>
 {% endblock %}
