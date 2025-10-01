@@ -17,7 +17,6 @@ DEBUG = os.getenv("DEBUG") == "True"
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-tzvgd461b+463l)eaa%3f=^6-*ut=7e)ji31h++_&9%78yx2x('
-LOGIN_REDIRECT_URL = "surveyForm"
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -37,8 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'initialSurvey',
     'roadmap',
-    'users',
     'home',
+    "users.apps.UsersConfig",
 ]
 
 MIDDLEWARE = [

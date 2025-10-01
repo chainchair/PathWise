@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Registrarse - Pathwise{% endblock %}
+{% block title %}Registrarse{% endblock %}
 
 {% block content %}
 <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
@@ -10,7 +10,7 @@
 
         {% if form.errors %}
             <div class="alert alert-danger">
-                Por favor corrige los errores a continuación.
+                Error en el formulario. Por favor, corrige los errores e inténtalo de nuevo.
             </div>
         {% endif %}
 
@@ -41,7 +41,7 @@
         </form>
 
         <div class="text-center mt-3">
-            <small>¿Ya tienes cuenta? <a href="{% url 'login' %}">Inicia sesión aquí</a></small>
+            <small>¿Ya tienes cuenta? <a href="{% url 'users:login' %}">Inicia sesión aquí</a></small>
         </div>
     </div>
 </div>

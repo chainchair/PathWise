@@ -10,13 +10,13 @@ client = OpenAI(api_key=settings.OPENAI_API_KEY)
 
 @login_required
 def roadmap_detail(request):
-    try:
-        survey = Survey.objects.get(user=request.user)
-    except Survey.DoesNotExist:
-        return redirect("surveyForm")  # si no hay encuesta, lo mandamos al formulario
+    profile = request.user.profile
 
-    # Obtener el roadmap del usuario
-    roadmap, created = Roadmap.objects.get_or_create(user=request.user, survey=survey)
+    # Obtener el survey o redirigir si no existe
+    survey = get_object_or_404(Survey, user=profile)
+
+    # Obtener o crear roadmap
+    roadmap, created = Roadmap.objects.get_or_create(user=profile, survey=survey)
 
     # Si aún no tiene contenido, generarlo con ChatGPT
     if not roadmap.content:
@@ -33,7 +33,7 @@ def roadmap_detail(request):
         Genera un roadmap de carrera personalizado en pasos concretos EN TEXTO PLANO, sin formato, para que el usuario pueda avanzar en su carrera profesional.
         """
 
-        # Nueva llamada a la API usando la versión 1.0+
+        # Nueva llamada a la API 
         response = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[{"role": "user", "content": prompt}],
@@ -43,7 +43,6 @@ def roadmap_detail(request):
         # Guardar el contenido generado en el roadmap
         roadmap.content = response.choices[0].message.content
         roadmap.save()
-        print("ROADMAP GENERADO:", roadmap.content)
 
     # Renderizar la plantilla
     return render(request, "roadmap/myRoadmap.html", {"roadmap": roadmap})

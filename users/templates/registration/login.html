@@ -3,7 +3,7 @@
 {% load static %}
 
 //title block
-{% block title %} <title>Login - Pathwise</title> {% endblock %}
+{% block title %} Login {% endblock %}
 
 
 //content block
@@ -35,7 +35,7 @@
         </form>
 
         <div class="text-center mt-3">
-            <small>¿No tienes cuenta? <a href="{% url 'register' %}">Regístrate aquí</a></small>
+            <small>¿No tienes cuenta? <a href="{% url 'users:register' %}">Regístrate aquí</a></small>
         </div>
     </div>
 </div>

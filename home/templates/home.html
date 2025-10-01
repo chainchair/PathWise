@@ -17,10 +17,10 @@
         <a href= "{% url 'landing'%} "class="btn"><h2>Pathwise</h2></a>
         <nav>
             
-            <a href= "{% url 'login'%}">Login</a>
-            <a href= "{% url 'register'%} ">Sign in</a>
+            <a href= "{% url 'users:login'%}">Login</a>
+            <a href= "{% url 'users:register'%} ">Sign in</a>
             <a href= "{% url 'my_roadmap'%} ">Roadmap</a>
-            <a href= "{% url 'logout'%} ">Logout</a>
+            <a href= "{% url 'users:logout'%} ">Logout</a>
 
         </nav>
     </header>
@@ -29,7 +29,7 @@
 <section class="hero bg-gradient-to-r from-blue-500 to-blue-700 text-white text-center py-12">
   <h1 class="text-4xl font-bold mb-4">Tu camino empieza aquí </h1>
   <p class="text-lg mb-6">Descubre una plataforma diseñada para encontrar el trabajo de tus sueños a partir de un roadmap personalizado impulsado por inteligencia artificial.</p>
-  <button href="{%url 'login'%}" class="bg-gray-800 text-white px-6 py-2 rounded-lg shadow-md hover:bg-gray-900">Comenzar ahora</button>
+  <button href="{%url 'users:register'%}" class="bg-gray-800 text-white px-6 py-2 rounded-lg shadow-md hover:bg-gray-900">Comenzar ahora</button>
 </section>
 <!-- Pilares -->
 <section class="features">
