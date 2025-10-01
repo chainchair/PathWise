@@ -79,7 +79,10 @@ https://platform.openai.com/api-keys
 ```bash
 python manage.py migrate
 ```
-
+### ajecutar servidor
+```bash
+python manage.py runserver
+```
 ### crear superusuario (opcional)
 ```bash
 python manage.py createsuperuser
