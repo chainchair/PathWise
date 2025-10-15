@@ -6,9 +6,17 @@
 {% block content %}
     <h2>Mi Roadmap</h2>
     {% if roadmap %}
-        <p>{{ roadmap.content |linebreaks  }}</p>
+        {% for line in roadmap.content.splitlines %}
+            {% if line %}
+                <div class="step">{{ line }}</div>
+            {% endif %}
+        {% endfor %}
     {% else %}
-        <p>No tienes roadmap aún.</p>
+        <p class="empty-roadmap">No tienes un roadmap aún. Completa tu encuesta inicial para generar uno.</p>
     {% endif %}
 
+    <div style="text-align: center;">
+        <a href="/" class="return-btn">Volver al inicio</a>
+    </div>
+</div>
 {% endblock %}
